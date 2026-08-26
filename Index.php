@@ -2,9 +2,11 @@
 
 include "infra/conexao.php";
 
-$animais = mysqli_query($conexao, "SELECT * FROM animais");
+$sql_clientes = "SELECT * FROM clientes ORDER BY nome";
+$clientes = mysqli_query($conexao, $sql_clientes);
 
-$clientes = mysqli_query($conexao, "SELECT * FROM clientes");
+$sql_animais = "SELECT * FROM animais ORDER BY nome";
+$animais = mysqli_query($conexao, $sql_animais);
 
 $resultadoPesquisa = null;
 
@@ -38,7 +40,7 @@ $animais = mysqli_query($conexao, $sqlAnimais);
 <body>
 <div class="container1">
 <h2>Cadastrar clientes</h2>
-<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="public/style.css">
 <form action="public/clientes/cadastro.php" method="POST">
 
     <label>Nome:</label>
@@ -176,8 +178,6 @@ $animais = mysqli_query($conexao, $sqlAnimais);
             <th>Cliente</th>
             <th>Animal</th>
             <th>Descrição</th>
-            <th>Preço</th>
-            <th>Ações</th>
 
         </tr>
 
@@ -228,6 +228,8 @@ $animais = mysqli_query($conexao, $sqlAnimais);
 <hr>
 <div class="container4">
 <h2 class="titulo">Todos os animais</h2>
+</div>
+<div class="container5">
 
 <table class="table" border="1" cellpadding="10">
 
@@ -282,6 +284,7 @@ $animais = mysqli_query($conexao, $sqlAnimais);
 
 </table>
 </div>
+
 </body>
 
 </html>
