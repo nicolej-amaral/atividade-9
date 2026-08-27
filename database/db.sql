@@ -1,6 +1,6 @@
-CREATE DATABASE atividade_09;
+CREATE DATABASE atividade09;
 
-USE atividade_09;
+USE atividade09;
 
 CREATE TABLE clientes (
  id INT AUTO_INCREMENT PRIMARY KEY,

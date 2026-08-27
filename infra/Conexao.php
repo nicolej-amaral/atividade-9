@@ -1,11 +1,12 @@
 <?php
 
 $host = "localhost";
-$usuario = "root";
-$senha = "root";
-$banco = "atividade_09";
+$user = "root";
+$pass = "root";
+$db_name = "atividade_09";
 
-$conexao = new mysqli($host, $usuario, $senha, $banco);
+
+$conexao = new mysqli($host, $user, $pass, $db_name, $port);
 
 if ($conexao->connect_error) {
     die("Erro na conexão com o banco: " . $conexao->connect_error);
